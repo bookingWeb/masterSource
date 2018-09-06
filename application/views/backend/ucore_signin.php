@@ -1,10 +1,15 @@
+<html>
+<head>
 <script type="text/javascript" src="<?php echo $themes_url; ?>js/jquery-2.1.0.min.js"></script>
 <link href="<?php echo $themes_url ?>/css/signin.css" rel="stylesheet" type="text/css"/>
+<meta name="csrf_token" content="<?= $this->security->get_csrf_hash(); ?>">
+</head>
 <body>
 <div id="formWrapper">
 
 <div id="form">
 	<form action="<?php echo site_url('ucore/submit');?>" method="POST">
+		<input type="hidden" name="csrf_token" value="<?= $this->security->get_csrf_hash(); ?>">
 		<div class="logo">
 		<g>
 			<img src="<?php echo $themes_url; ?>/img/book.png" style="width:90%;height:15%;">
@@ -42,7 +47,6 @@
 </div>
 
 </div>
-</body>
 </html>
 
 <script type="text/javascript">
@@ -70,6 +74,7 @@
 		$("#add_err").css('display', 'none', 'important');
 		$("#add_err").css('display', 'inline', 'important');
 		$("#add_err").html("<img src='<?php echo $themes_url;?>img/loading2.gif' style='height:75px;width:auto;'/>")
-			   
 	}
 </script>
+</body>
+</html>

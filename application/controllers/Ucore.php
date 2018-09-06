@@ -32,7 +32,6 @@ class Ucore extends CI_Controller {
 	
 	public function submit()
 	{
-
 		$data['themes_url'] = base_url() . $this->config->item('theme_backend');
 		
 		$tombol = $this->input->post("tombol",true);
